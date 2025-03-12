@@ -7,10 +7,25 @@
 </head>
 <body>
   <h1>article list</h1>
-  <h2>author: {{author}} list:{{article_number}}</h2>
+  <h2>author: {{author|upper}} list:{{article_number}}</h2>
   <ul>
     <li>{{article_list.0}}</li>
     <li>{{article_list.1}}</li>
   </ul>
+  <p>姓名：{{info.name|upper}} 年龄：{{info.age}} 性别：{{info.gender|default:'未知'}}</p>
+  <div>喜欢的programming：{{info.programming.0}}</div>
+
+  {% for article in article_list %}
+  <ul>
+    <li>{{ article }}</li>
+  </ul>
+  {% empty %}
+  <p>列表为空</p>
+  {%  endfor %}
+
+  {% for key,value in info.items %}
+  <p>{{key}} : {{value}}</p>
+  {% endfor %}
+
 </body>
 </html>
