@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>article list</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
   <h1>article list</h1>
   <h2>author: {{author|upper}} list:{{article_number}}</h2>
   <ul>
@@ -27,5 +21,6 @@
   <p>{{key}} : {{value}}</p>
   {% endfor %}
 
-</body>
-</html>
+  {% include 'page.html'%}
+
+{% endblock %}
